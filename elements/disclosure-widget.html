@@ -1,0 +1,65 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="disclosure-widget" attributes="summary open">
+  <template>
+    <style>
+      button {
+        display: block;
+        width: 100%;
+        border: 0; 
+        background: #000;
+        color: #fff;
+        padding: 0.25em 0.75em;
+        font-size: 1.5em;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      button:hover, button:focus {
+        background: darkBlue;
+      }
+      
+      button:before {
+        content: '\25b8\0020';
+      }
+
+      button::-moz-focus-inner { 
+        border: 0;
+        padding: 0;
+      }
+
+      [aria-hidden] {
+        padding: 0.75em;
+        background: #ddd;
+        margin-top: 0;
+      }
+
+      [aria-expanded="true"]:before {
+        content: '\25be\0020';
+      }
+
+      [aria-hidden="true"] {
+        display: none;
+      }
+      
+      [aria-hidden="false"] {
+        display: block;
+      }
+    </style>
+    <div role="group">
+      <button aria-expanded="{{open}}" on-click="{{toggleContent}}">{{summary}}</button>
+      <div aria-hidden="{{!open}}" tabindex="0">
+        <content></content>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer('disclosure-widget', {
+      summary: "reveal content",
+      open: false,
+      toggleContent: function() {
+        this.open = !this.open;
+      }
+    });
+  </script>
+</polymer-element>

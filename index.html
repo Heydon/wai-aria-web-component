@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="elements/disclosure-widget.html">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="A simple, accessible web component for showing and hiding HTML content.">
+    <title>Accessible Disclosure Web Component with Polymer and WAI-ARIA</title>
+  </head>
+  <body>
+    <header role="banner">
+      <h1>A "disclosure" web component using <a href="http://www.polymer-project.org/">Polymer</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">WAI-ARIA</a></h1>
+      <p>A simple web component for showing and hiding content. You just supply some content inside the <code>&lt;disclosure-widget&gt;</code> element and a "summary" as a value of its <code>summary</code> attribute. The <a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/">shadow DOM</a> takes care of the markup, encapsulated styling and WAI-ARIA state changes.</p>
+    </header>
+    <h2>In practise:</h2>
+
+    <disclosure-widget summary="Some info">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque lectus at convallis placerat. Curabitur et nunc est. Sed non consequat dolor, nec consequat risus. In auctor, lacus vel ultricies pulvinar, nulla augue interdum velit, nec imperdiet risus eros vitae ligula.</p> 
+    </disclosure-widget>
+    
+    <disclosure-widget summary="More info" open>
+      <p>This one is open by default, using the <code>open</code> boolean attribute.</p>
+      <p>It doesn't matter what content you include inside <code>&lt;disclosure-widget&gt;</code>. Here's an image:</p>
+      <p><img src="http://onlypositive.net/image.axd?picture=2010%2F5%2Fcrab.jpg" alt="angry crab" /></p>
+    </disclosure-widget>
+    <h2>Basic usage</h2>
+    <pre><code>
+&lt;disclosure-widget summary="Some info"&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque lectus at convallis placerat. Curabitur et nunc est. Sed non consequat dolor, nec consequat risus. In auctor, lacus vel ultricies pulvinar, nulla augue interdum velit, nec imperdiet risus eros vitae ligula.&lt;/p&gt;
+&lt;/disclosure-widget&gt;
+      </code></pre>
+    <h2>Open by default (using the <code>open</code> attribute)</h2>
+    <pre><code>
+&lt;disclosure-widget summary="More info" open&gt;
+  &lt;p&gt;Duis sagittis lacus lacus, eu iaculis nulla fermentum non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam tempus erat risus, sit amet molestie arcu commodo non. Suspendisse tincidunt sem vitae erat aliquam ornare.&lt;/p&gt;
+&lt;/disclosure-widget&gt;
+      </code></pre>
+      <footer role="contentinfo">
+        <p>By <a href="http://twitter.com/heydonworks">@heydonworks</a></p>
+        <p>Idea for this from <a href="http://twitter.com/stevefaulkner">Steve Faulkner</a></p>
+      </footer>
+    <aside role="complementary">
+      <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'heydonworks'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </aside>
+  </body>
+</html>

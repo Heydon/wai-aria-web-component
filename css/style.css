@@ -1,0 +1,48 @@
+/* Just boilerplate */
+
+body {
+  margin: 1.5em auto;
+  max-width: 900px;
+  font-size: 20px;
+  line-height: 1.33;
+  font-family: Georgia, serif;
+}
+
+* + * {
+  margin-top: 1.33em;
+}
+
+disclosure-widget {
+  display: block;
+}
+
+code {
+  font-size: 0.85em;
+  padding: 0 0.25em;
+}
+
+pre, code {
+  background: #eee;
+}
+
+pre code {
+  padding: 0.75em;
+  display:block;
+  overflow: auto;
+  line-height: 1.33;
+}
+
+[role="contentinfo"] {
+  padding-top: 1.33em;
+  border-top: 2px dashed #000;
+}
+
+[role="contentinfo"] p {
+  margin: 0;
+}
+
+@media all and (max-width: 700px) {
+  body {
+    font-size: 16px;
+  }
+}
